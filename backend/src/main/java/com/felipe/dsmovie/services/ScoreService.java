@@ -30,11 +30,9 @@ public class ScoreService {
         if(user == null){
             user = new User();
             user.setEmail(dto.getEmail());
-            System.out.println("Tentat salvar");
             user = userRepository.saveAndFlush(user);
-            System.out.println("Salvou");
         }
-        System.out.println("buscar filme: ");
+        
         Movie movie = movieRepository.findById(dto.getMovieId()).get();
         
         Score score = new Score();
